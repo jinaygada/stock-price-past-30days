@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+    <title>Stock Price</title>
+  </head>
+  <body>
+  <div class="container mt-5">
+    <h1>Input a stock symbol to know its price for the last 30 days:</h1>
+    <form method="POST" action="/result" class="align-items-center">
+        <input type="text" name="symbol" placeholder="e.g GOOG, AAPL or AMZN" required>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  </body>
+  </body>
+</html>
